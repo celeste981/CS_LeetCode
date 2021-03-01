@@ -23,18 +23,20 @@ public class Solution410 {
 
     public int splitArray(int[] nums, int m) {
         int left = 0 , right = 0;
+        //二分查找右边界是数组元素和
+        //二分查找左边界是最大数组元素
         for (int i = 0 ; i < nums.length ; i++ ) {
             right += nums[i];
             if (left < nums[i]) {
                 left = nums[i];
             }
-            while (left < right) {
-                int mid = (right - left) / 2 + left;
-                if(check(nums , mid , m)){
-                    right = mid;
-                } else {
-                    left = mid + 1;
-                }
+        }
+        while (left < right) {
+            int mid = (right - left) / 2 + left;
+            if(check(nums , mid , m)){
+                right = mid;
+            } else {
+                left = mid + 1;
             }
         }
         return left;
@@ -56,6 +58,6 @@ public class Solution410 {
 
     public static void main(String[] args) {
         Solution410 solution410 = new Solution410();
-        System.out.println(solution410.splitArray(new int[]{7,2,5,10,8} , 2));
+        System.out.println(solution410.splitArray(new int[]{1,7,2,8,5} , 3));
     }
 }
