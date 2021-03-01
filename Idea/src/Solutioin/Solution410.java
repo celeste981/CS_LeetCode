@@ -26,6 +26,21 @@ public class Solution410 {
         int ans = 0;
         return ans;
     }
+
+    public boolean check(int[] nums , int x , int m) {
+        int sum = 0;
+        int cnt = 1;
+        for (int i = 0; i < nums.length; i++) {
+            if (sum + nums[i] > x) {
+                cnt++;
+                sum = nums[i];
+            } else {
+                sum += nums[i];
+            }
+        }
+        return cnt <= m;
+    }
+
     public static void main(String[] args) {
         Solution410 solution410 = new Solution410();
         System.out.println(solution410.splitArray(new int[]{7,2,5,10,8} , 2));
