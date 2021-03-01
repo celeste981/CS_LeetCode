@@ -23,11 +23,28 @@ package PrimaryAlgorithm.Array;
  */
 public class Array2 {
     public int maxProfit(int[] prices) {
+        //买卖股票的最佳时机
         int ans = 0;
-        return ans;
+        //暴力法
+//        for (int i = 0 ; i < prices.length ; i++ ) {
+//            for (int j = i+1 ; j < prices.length ; j++ ) {
+//                ans = prices[j] - prices[i] > ans ? prices[j] - prices[i] : ans;
+//            }
+//        }
+        //历史最低点
+        int min = prices[0] , max = 0;
+        for ( int price : prices ) {
+            if(price < min){
+                min = price;
+            }
+            if( (price - min) > max ) {
+                max = (price - min) ;
+            }
+        }
+        return max;
     }
     public static void main(String[] args) {
         Array2 array2 = new Array2();
-        System.out.println(array2.maxProfit(new int[]{ 1 , 2 , 3 , 4 , 5}));
+        System.out.println(array2.maxProfit(new int[]{7,1,5,3,6,4}));
     }
 }
