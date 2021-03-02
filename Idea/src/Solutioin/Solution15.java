@@ -43,27 +43,44 @@ public class Solution15 {
                continue;
             }
             int left = i + 1;
-            int right = i + 2;
-            while(right < nums.length){
-                int temp = (-1) * (nums[left] + nums[i]);
-                if (nums[right] == temp){
-                    occ = new ArrayList<>();
-                    occ.add(nums[i]);
-                    occ.add(nums[left]);
-                    occ.add(nums[right]);
-                    ans.add(occ);
+            int right = nums.length - 1;
+            int temp = nums[i] * (-1);
+            while(left < right){
+                if(temp == nums[left] + nums[right]) {
+                    occ = new ArrayList<>(Arrays.asList(nums[i] , nums[left] , nums[right]));
                     System.out.println(occ);
-                    break;
-                } else if (nums[right] > temp) {
+                    ans.add(occ);
                     left++;
-                    right = left + 1;
+                    while (left < right && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                } else if (temp > nums[left] + nums[right]) {
+                    left++;
                 } else {
-                    right++;
+                    right--;
                 }
             }
         }
         return ans;
     }
+
+/*
+* int temp = (-1) * (nums[left] + nums[i]);
+                if (nums[right] == temp){
+                    occ = new ArrayList<>(Arrays.asList(nums[i] , nums[left] , nums[right]));
+                    ans.add(occ);
+                    System.out.println(occ);
+                    left++;
+                    while(left < nums.length - 1 && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                    right = left + 1;
+                } else if (nums[right] > temp) {
+                    break;
+                } else {
+                    right++;
+                }*/
+
 
     public static void main(String[] args) {
         Solution15 solution15 = new Solution15();
