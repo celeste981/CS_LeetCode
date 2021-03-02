@@ -30,6 +30,7 @@ public class SolutionLCP12 {
         //二分先确定左右边界
         //左边界最小为0
         //右边界最大为sum(time)
+        //
         int left = 0 , right = 0;
         for (int t : time) {
             right += t;
