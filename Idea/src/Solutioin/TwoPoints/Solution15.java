@@ -8,14 +8,11 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package Solutioin;
-
-import Solutioin.BinarySearch.SolutionLCP12;
+package Solutioin.TwoPoints;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 〈一句话功能简述〉<br> 
