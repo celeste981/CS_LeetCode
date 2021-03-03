@@ -43,6 +43,46 @@ public class Solution15 {
                continue;
             }
             int left = i + 1;
+            int right = i + 2;
+            while (right < nums.length) {
+                int temp = (-1) * (nums[left] + nums[i]);
+                if (nums[right] == temp){
+                    occ = new ArrayList<>(Arrays.asList(nums[i] , nums[left] , nums[right]));
+                    ans.add(occ);
+                    System.out.println(occ);
+                    left++;
+                    while(left < nums.length - 1 && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                    right = left + 1;
+                } else if (nums[right] > temp) {
+                    left++;
+                    while(left < nums.length - 1 && nums[left] == nums[left - 1]) {
+                        left++;
+                    }
+                    right = left + 1;
+                } else {
+                    right++;
+                    if (right == nums.length && left != nums.length - 2) {
+                        left++;
+                        while(left < nums.length - 1 && nums[left] == nums[left - 1]) {
+                            left++;
+                        }
+                        right = left + 1;
+                    }
+                }
+            }
+
+
+        }
+        return ans;
+    }
+
+
+
+
+    /*
+    * int left = i + 1;
             int right = nums.length - 1;
             int temp = nums[i] * (-1);
             while(left < right){
@@ -59,32 +99,10 @@ public class Solution15 {
                 } else {
                     right--;
                 }
-            }
-        }
-        return ans;
-    }
-
-/*
-* int temp = (-1) * (nums[left] + nums[i]);
-                if (nums[right] == temp){
-                    occ = new ArrayList<>(Arrays.asList(nums[i] , nums[left] , nums[right]));
-                    ans.add(occ);
-                    System.out.println(occ);
-                    left++;
-                    while(left < nums.length - 1 && nums[left] == nums[left - 1]) {
-                        left++;
-                    }
-                    right = left + 1;
-                } else if (nums[right] > temp) {
-                    break;
-                } else {
-                    right++;
-                }*/
-
+            }*/
 
     public static void main(String[] args) {
         Solution15 solution15 = new Solution15();
         solution15.threeSum(new int[]{-1,0,1,2,-1,-4});
-        //System.out.println();
     }
 }
