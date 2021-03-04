@@ -10,7 +10,6 @@
  */
 package Solutioin.BitOperation;
 
-import Solutioin.Solution15;
 
 import java.util.ArrayList;
 import java.util.Arrays;

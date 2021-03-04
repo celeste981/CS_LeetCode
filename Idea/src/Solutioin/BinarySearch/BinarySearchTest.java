@@ -20,6 +20,21 @@ package Solutioin.BinarySearch;
  */
 public class BinarySearchTest {
 
+    public int binarySearch(int[] nums , int target) {
+        int left = 0 , right = nums.length;
+        while(left < right) {
+            int mid = left + (right - left) / 2;
+            if (target == nums[mid]) {
+                return mid;
+            } else if (target < nums[mid]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
+
     public int left_bound(int[] nums , int target) {
         int left = 0 , right = nums.length;
         while (left < right) {
@@ -52,7 +67,8 @@ public class BinarySearchTest {
 
     public static void main(String[] args) {
         BinarySearchTest binarySearchTest = new BinarySearchTest();
-        System.out.println(binarySearchTest.left_bound(new int[]{1,2,2,2,3} , 2));;
-        System.out.println(binarySearchTest.right_bound(new int[]{1,2,2,2,3} , 2));;
+        System.out.println(binarySearchTest.binarySearch(new int[]{1,2,2,4} , 2));
+        System.out.println(binarySearchTest.left_bound(new int[]{1,2,2,4} , 2));;
+        System.out.println(binarySearchTest.right_bound(new int[]{1,2,2,4} , 2));;
     }
 }

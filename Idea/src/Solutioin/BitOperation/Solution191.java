@@ -10,7 +10,6 @@
  */
 package Solutioin.BitOperation;
 
-import Solutioin.Solution15;
 
 /**
  * 〈一句话功能简述〉<br> 
