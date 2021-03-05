@@ -28,11 +28,11 @@ public class Solution81 {
             if ( target == nums[mid]) {
                 return true;
             } else {
-//                if ( nums[mid] == nums[right] ){
-//                    right--;
-//                    continue;
-//                } else
-                if (nums[mid] <= nums[right]) {
+                if ( nums[mid] == nums[right] ){
+                    right--;
+                    continue;
+                }
+                if (nums[mid] < nums[right]) {
                     //右边有序
                     if (nums[mid] <= target && target <= nums[right]) {
                         left = mid + 1;
