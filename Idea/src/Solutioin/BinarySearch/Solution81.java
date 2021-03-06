@@ -54,6 +54,9 @@ public class Solution81 {
 
     public static void main(String[] args) {
         Solution81 solution81 = new Solution81();
-        System.out.println(solution81.search(new int[]{1,0,1,1,1,1} , 0));
+        //1,0,1,1,1      0
+        //2,5,6,0,0,1,2     3
+        //1,1,1,1,1,1,2,1,1      2
+        System.out.println(solution81.search(new int[]{1,1,1,1,1,1,2,1,1} , 2));
     }
 }

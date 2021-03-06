@@ -37,6 +37,7 @@ public class Solution503 {
         return ret;
     }
     public static void main(String[] args) {
-
+        Solution503 solution503 = new Solution503();
+        System.out.println(Arrays.toString(solution503.nextGreaterElements(new int[]{1,2,1})));
     }
 }
