@@ -21,12 +21,12 @@ package Solutioin.BinarySearch;
 public class Solution875 {
 
     public int minEatingSpeed(int[] piles, int h) {
-        int left = 1 , right = 1000000000;
-//        for (int pile : piles) {
-//            if (pile > right){
-//                right = pile;
-//            }
-//        }
+        int left = 1 , right = 1;
+        for (int pile : piles) {
+            if (pile > right){
+                right = pile;
+            }
+        }
         while ( left <= right) {
             int mid = left + (right - left) / 2;
             if (check(piles , mid , h)){
@@ -41,10 +41,7 @@ public class Solution875 {
     public boolean check (int[] piles , int m , int h) {
         int cnt = 0;
         for (int pile : piles ) {
-            while(pile > 0){
-                pile -= m;
-                cnt++;
-            }
+            cnt += ( (pile - 1) / m ) + 1;
         }
         return cnt <= h;
     }
