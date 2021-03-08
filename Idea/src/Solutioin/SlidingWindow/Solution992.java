@@ -8,11 +8,10 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package Solutioin;
+package Solutioin.SlidingWindow;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Handler;
 
 /**
  * 〈一句话功能简述〉<br> 
