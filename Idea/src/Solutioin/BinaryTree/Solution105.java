@@ -40,7 +40,7 @@ public class Solution105 {
     }
 
     public TreeNode buildRoot(int[] preorder, int preStart , int preEnd , int[] inorder , int inStart , int inEnd) {
-        if (preEnd > preStart) {
+        if (preEnd < preStart) {
             return null;
         }
         int rootVal = preorder[preStart];
