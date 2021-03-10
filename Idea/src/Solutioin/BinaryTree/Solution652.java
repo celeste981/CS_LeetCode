@@ -11,6 +11,8 @@
 package Solutioin.BinaryTree;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -23,7 +25,7 @@ import java.util.List;
  */
 public class Solution652 {
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -38,13 +40,41 @@ public class Solution652 {
         }
     }
 
-    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        List<TreeNode>  ans = new ArrayList<>();
+    List<TreeNode>  ans = new ArrayList<>();
+    HashMap<String , Integer> map = new HashMap<>();
 
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        traverse(root);
         return ans;
     }
 
+    public String traverse(TreeNode root) {
+        if (root == null){
+            return "#";
+        }
+        String rootStr = traverse(root.left) + "," + traverse(root.right) + "," + root.val;
+        int fre = map.getOrDefault(rootStr , 0);
+        if (fre == 1) {
+            ans.add(root);
+            System.out.println(rootStr);
+        }
+        map.put(rootStr , fre + 1);
+        return rootStr;
+    }
+
+
     public static void main(String[] args) {
         Solution652 solution652 = new Solution652();
+        TreeNode root = new TreeNode(10);
+        TreeNode l = new TreeNode(2);
+        TreeNode r = new TreeNode(22);
+        root.left = l; root.right = r;
+        TreeNode ll = new TreeNode(1);
+        TreeNode lr = new TreeNode(12);
+        l.left = ll; l.right = lr;
+        TreeNode rl = new TreeNode(1);
+        TreeNode rr = new TreeNode(1);
+        r.left = rl; r.right = rr;
+        solution652.findDuplicateSubtrees(root);
     }
 }
