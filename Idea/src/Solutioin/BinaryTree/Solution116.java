@@ -20,28 +20,8 @@ package Solutioin.BinaryTree;
  */
 public class Solution116 {
 
-    public class Node {
-        public int val;
-        public Node left;
-        public Node right;
-        public Node next;
-
-        public Node() {}
-
-        public Node(int _val) {
-            this.val = _val;
-        }
-
-        public Node(int _val , Node _left , Node _right , Node _next) {
-            this.val = _val;
-            this.left = _left;
-            this.right = _right;
-            this.next = _next;
-        }
-    }
-
     public Node connect(Node root) {
-        if (root == null ) {
+        if (root == null) {
             return root;
         }
         connectTwoNode(root.left , root.right);
