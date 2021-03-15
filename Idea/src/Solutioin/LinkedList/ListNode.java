@@ -23,4 +23,8 @@ public class ListNode {
         ListNode next;
         ListNode() {}
         ListNode(int x) { val = x; }
+        ListNode(int x , ListNode next) {
+                val = x;
+                this.next = next;
+        }
 }
