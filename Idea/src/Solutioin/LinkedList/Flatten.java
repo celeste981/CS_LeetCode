@@ -46,18 +46,25 @@ public class Flatten {
         }
         Node flattenHead = new Node( 0 , null , null , null) ;
         Node cur = flattenHead;
-        recursion( flattenHead , head);
-        return flattenHead.next;
+        recursion( flattenHead , head, flattenHead);
+        Node newHead = flattenHead.next;
+        newHead.prev = null;
+        return newHead;
     }
 
-    public void recursion ( Node cur , Node head ) {
+    public Node recursion ( Node cur , Node head , Node listnode) {
         if ( head == null ) {
-            return ;
+            System.out.println(listnode.val);
+            return listnode;
         }
-        cur.next = new Node(head.val , cur , null , null );
+        cur.next = new Node(head.val , listnode , null , null );
         cur = cur.next;
-        recursion(cur , head.child);
-        recursion(cur , head.next);
+        listnode = cur;
+        Node listnode1 = recursion(cur , head.child, listnode);
+        System.out.println(listnode1.val);
+        Node listnode2 = recursion(cur , head.next, listnode1);
+        System.out.println(listnode2.val);
+        return listnode2;
     }
 
     public static void main(String[] args) {
