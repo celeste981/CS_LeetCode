@@ -8,9 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package Solutioin.Stack;
-
-import Solutioin.BinaryTree.Solution105;
+package Solutioin.Stack_Queue;
 
 import java.util.Stack;
 
