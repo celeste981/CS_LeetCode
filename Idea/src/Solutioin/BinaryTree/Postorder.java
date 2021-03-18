@@ -10,6 +10,8 @@
  */
 package Solutioin.BinaryTree;
 
+import Solutioin.LinkedList.ListNode;
+
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -25,17 +27,38 @@ import java.util.List;
  */
 public class Postorder {
 
+//    public List<Integer> postorderTraversal(TreeNode root) {
+//        LinkedList<Integer> ans = new LinkedList<>();
+//        Deque<TreeNode> stack = new LinkedList<>();
+//        TreeNode prev = null;
+//        while (root != null || !stack.isEmpty()) {
+//            while (root != null) {
+//                stack.push(root);
+//                root = root.left;
+//            }
+//            root = stack.peek();
+//            if (root.right == null || root.right == prev) {
+//                ans.add(stack.pop().val);
+//                prev = root;
+//                root = null;
+//            } else {
+//                root = root.right;
+//            }
+//        }
+//        return ans;
+//    }
+
     public List<Integer> postorderTraversal(TreeNode root) {
-        LinkedList<Integer> ans = new LinkedList<>();
+        List<Integer> ans = new LinkedList<>();
         Deque<TreeNode> stack = new LinkedList<>();
         TreeNode prev = null;
-        while (root != null || !stack.isEmpty()) {
-            while (root != null) {
+        while ( root != null || !stack.isEmpty() ) {
+            while ( root != null ) {
                 stack.push(root);
                 root = root.left;
             }
             root = stack.peek();
-            if (root.right == null || root.right == prev) {
+            if ( root.right == null || root.right == prev) {
                 ans.add(stack.pop().val);
                 prev = root;
                 root = null;

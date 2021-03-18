@@ -20,55 +20,52 @@ package Solutioin.LinkedList;
  */
 public class Flatten {
 
-    Node last = null;
-    public Node flatten(Node head) {
+//    Node last = null;
+//    public Node flatten(Node head) {
+//        if ( head == null ) {
+//            return null;
+//        } else if ( head.next == null && head.child == null ) {
+//            last = head;
+//            return head;
+//        } else if ( head.child == null ) {
+//            head.next = flatten(head.next);
+//            head.next.prev = head;
+//        } else {
+//            Node curSplit = head.next;
+//            head.next = flatten(head.child);
+//            head.next.prev = head;
+//            if ( last != null && curSplit != null) {
+//                last.next = flatten(curSplit);
+//                last.next.prev = last;
+//            }
+//        }
+//        head.child = null;
+//        return head;
+//    }
+
+    Node cur;
+
+    public Node flatten ( Node head ) {
         if ( head == null ) {
-            return null;
-        } else if ( head.next == null && head.child == null ) {
-            last = head;
             return head;
-        } else if ( head.child == null ) {
-            head.next = flatten(head.next);
-            head.next.prev = head;
-        } else {
-            Node curSplit = head.next;
-            head.next = flatten(head.child);
-            head.next.prev = head;
-            if ( last != null && curSplit != null) {
-                last.next = flatten(curSplit);
-                last.next.prev = last;
-            }
         }
-        head.child = null;
-        return head;
+        Node flattenHead = new Node( 0 , null , null , null) ;
+        cur = flattenHead;
+        recursion( head);
+        Node newHead = flattenHead.next;
+        newHead.prev = null;
+        return newHead;
     }
 
-//    public Node flatten ( Node head ) {
-//        if ( head == null ) {
-//            return head;
-//        }
-//        Node flattenHead = new Node( 0 , null , null , null) ;
-//        Node cur = flattenHead;
-//        recursion( flattenHead , head, flattenHead);
-//        Node newHead = flattenHead.next;
-//        newHead.prev = null;
-//        return newHead;
-//    }
-//
-//    public Node recursion ( Node cur , Node head , Node listnode) {
-//        if ( head == null ) {
-//            System.out.println(listnode.val);
-//            return listnode;
-//        }
-//        cur.next = new Node(head.val , listnode , null , null );
-//        cur = cur.next;
-//        listnode = cur;
-//        Node listnode1 = recursion(cur , head.child, listnode);
-//        System.out.println(listnode1.val);
-//        Node listnode2 = recursion(cur , head.next, listnode1);
-//        System.out.println(listnode2.val);
-//        return listnode2;
-//    }
+    public void recursion (  Node head) {
+        if ( head == null ) {
+            return ;
+        }
+        cur.next = new Node(head.val , cur , null , null );
+        cur = cur.next;
+        recursion( head.child);
+        recursion( head.next);
+    }
 
     public static void main(String[] args) {
         Node root = new Node( 1 , null ,  null , null );
