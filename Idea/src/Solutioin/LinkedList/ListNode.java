@@ -21,6 +21,7 @@ package Solutioin.LinkedList;
 public class ListNode {
         int val;
         ListNode next;
+        ListNode prev;
         ListNode() {}
         ListNode(int x) { val = x; }
         ListNode(int x , ListNode next) {
