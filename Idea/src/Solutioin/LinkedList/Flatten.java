@@ -43,28 +43,54 @@ public class Flatten {
 //        return head;
 //    }
 
-    Node cur;
+//    Node cur;
+//
+//    public Node flatten ( Node head ) {
+//        if ( head == null ) {
+//            return head;
+//        }
+//        Node flattenHead = new Node( 0 , null , null , null) ;
+//        cur = flattenHead;
+//        recursion( head);
+//        Node newHead = flattenHead.next;
+//        newHead.prev = null;
+//        return newHead;
+//    }
+//
+//    public void recursion (  Node head) {
+//        if ( head == null ) {
+//            return ;
+//        }
+//        cur.next = new Node(head.val , cur , null , null );
+//        cur = cur.next;
+//        recursion( head.child);
+//        recursion( head.next);
+//    }
 
     public Node flatten ( Node head ) {
         if ( head == null ) {
-            return head;
+            return null;
         }
-        Node flattenHead = new Node( 0 , null , null , null) ;
-        cur = flattenHead;
-        recursion( head);
-        Node newHead = flattenHead.next;
-        newHead.prev = null;
-        return newHead;
-    }
+        head.child = flatten(head.child);
+        head.next = flatten(head.next);
 
-    public void recursion (  Node head) {
-        if ( head == null ) {
-            return ;
+        Node child = head.child;
+        Node next = head.next;
+
+        head.child = null;
+        head.next = child;
+        if ( child != null ) {
+            child.prev = head;
         }
-        cur.next = new Node(head.val , cur , null , null );
-        cur = cur.next;
-        recursion( head.child);
-        recursion( head.next);
+        Node temp = head;
+        while ( temp.next != null ) {
+            temp = temp.next;
+        }
+        temp.next = next;
+        if ( next != null ) {
+            next.prev = temp;
+        }
+        return head;
     }
 
     public static void main(String[] args) {

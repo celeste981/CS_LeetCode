@@ -21,7 +21,7 @@ import java.util.Deque;
  * @create 2021/3/17
  * @since 1.0.0
  */
-public class NumIslands {
+public class NumIslandsBFS {
     public int numIslands(char[][] grid) {
         if ( grid == null || grid.length == 0 ) {
             return 0;
@@ -71,8 +71,8 @@ public class NumIslands {
     }
 
     public static void main(String[] args) {
-        NumIslands numIslands = new NumIslands();
-        System.out.println(numIslands.numIslands(new char[][] {
+        NumIslandsBFS numIslandsBFS = new NumIslandsBFS();
+        System.out.println(numIslandsBFS.numIslands(new char[][] {
                 { '1' , '1' , '1' , '1' , '0' } ,
                 { '1' , '1' , '0' , '1' , '0' } ,
                 { '1' , '1' , '0' , '0' , '0' } ,
