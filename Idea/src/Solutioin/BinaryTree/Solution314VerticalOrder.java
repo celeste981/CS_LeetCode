@@ -36,7 +36,7 @@ public class Solution314VerticalOrder {
         while ( !queue.isEmpty() ) {
             TreeNode cur = queue.poll();
             int curIndex = nodes.get( cur );
-            ans.computeIfAbsent( curIndex , k -> new ArrayList<>()).add(cur.val);
+            ans.computeIfAbsent( curIndex , o -> new ArrayList<>()).add(cur.val);
             if ( cur.left != null ) {
                 nodes.put( cur.left , curIndex - 1 );
                 queue.offer( cur.left );
