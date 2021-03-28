@@ -19,20 +19,7 @@ package Solutioin.LinkedList;
  * @create 2021/3/8
  * @since 1.0.0
  */
-public class Solution206 {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) {
-            this.val = val;
-        }
-        ListNode(int val , ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
+public class Solution206ReverseList {
 
 //    public ListNode reverseList(ListNode head) {
 //        ListNode pre = null , cur = head , nxt = head;
@@ -71,7 +58,7 @@ public class Solution206 {
 
 
     public static void main(String[] args) {
-        Solution206 solution206 = new Solution206();
+        Solution206ReverseList solution206 = new Solution206ReverseList();
 
     }
 }

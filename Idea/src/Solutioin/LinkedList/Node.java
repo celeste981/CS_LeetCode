@@ -23,6 +23,14 @@ public class Node {
     public Node prev;
     public Node next;
     public Node child;
+    public Node random;
+    public Node() {}
+    //随机指针
+    public Node(int val , Node _next , Node _random ) {
+        this.val = val;
+        this.next = _next;
+        this.random = _random;
+    }
     Node ( int val , Node prev , Node next , Node child ) {
         this.val = val;
         this.prev = prev;

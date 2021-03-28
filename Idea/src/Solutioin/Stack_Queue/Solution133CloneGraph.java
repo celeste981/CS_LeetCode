@@ -24,7 +24,7 @@ import java.util.LinkedList;
  * @create 2021/3/21
  * @since 1.0.0
  */
-public class CloneGraph {
+public class Solution133CloneGraph {
 
     private HashMap < Node , Node > visited = new HashMap<>();
 

@@ -18,7 +18,7 @@ package Solutioin.LinkedList;
  * @create 2021/3/8
  * @since 1.0.0
  */
-public class Solution25 {
+public class Solution25ReverseKGroup {
 
 
     public ListNode reverseKGroup(ListNode head , int k) {
@@ -88,7 +88,7 @@ public class Solution25 {
     }
 
     public static void main(String[] args) {
-        Solution25 solution25 = new Solution25();
+        Solution25ReverseKGroup solution25ReverseKGroup = new Solution25ReverseKGroup();
         ListNode head = new ListNode(1 , null);
         ListNode point = head;
         for (int i = 2 ; i < 6 ; i++ ) {
@@ -98,7 +98,7 @@ public class Solution25 {
         }
 //        head = solution25.reversAll(head);
 //        solution25.Print(head);
-        head = solution25.reverseKGroup(head , 3);
-        solution25.Print(head);
+        head = solution25ReverseKGroup.reverseKGroup(head , 3);
+        solution25ReverseKGroup.Print(head);
     }
 }
