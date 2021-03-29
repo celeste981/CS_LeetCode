@@ -41,27 +41,6 @@ public class Solution138CopyRandomList {
 //        return cloneNode;
 //    }
 
-    //    public Node cloneGraphBFS(Node node) {
-//        if ( node == null ) {
-//            return null;
-//        }
-//        Deque< Node > queue = new LinkedList<>();
-//        Node cloneRoot = new Node( node.val , new ArrayList<>() );
-//        visited.put( node , cloneRoot );
-//        queue.offer( node );
-//        while ( !queue.isEmpty() ) {
-//            Node cur = queue.poll();
-//            for ( Node neighbor : cur.neighbors ) {
-//                if ( !visited.containsKey( neighbor ) ){
-//                    Node cloneNode = new Node( neighbor.val , new ArrayList<>() );
-//                    visited.put( neighbor , cloneNode );
-//                    queue.offer( neighbor );
-//                }
-//                visited.get( cur ).neighbors.add( visited.get(neighbor) );
-//            }
-//        }
-//        return cloneRoot;
-//    }
 
     public Node copyRandomBFSList(Node head) {
         if ( head == null ) {
@@ -71,29 +50,49 @@ public class Solution138CopyRandomList {
         Deque< Node > queue = new LinkedList<>();
         Node cloneHead = new Node( head.val , null , null );
         visited.put( head , cloneHead );
-        queue.offer( cloneHead );
+        queue.offer( head );
         while ( !queue.isEmpty() ) {
             Node cur = queue.poll();
-            if ( !visited.containsKey(cur.next) && cur.next != null ){
-                visited.get( cur ).next = new Node( cur.next.val , null , null );
-                visited.put( cur.next , visited.get( cur ).next );
-                queue.offer( visited.get( cur ).next);
-            } else {
-                visited.get( cur ).next = visited.get( cur.next );
+            if ( cur.next != null ) {
+                if ( !visited.containsKey(cur.next) ){
+                    visited.get( cur ).next = new Node( cur.next.val , null , null );
+                    visited.put( cur.next , visited.get( cur ).next );
+                    queue.offer( cur.next);
+                } else {
+                    visited.get( cur ).next = visited.get( cur.next );
+                }
             }
-            if ( !visited.containsKey( cur.random) && cur.random != null ){
-                visited.get( cur ).random = new Node( cur.random.val, null , null );
-                visited.put( cur.random , visited.get( cur ).random );
-                queue.offer( visited.get( cur ).random);
-            } else {
-                visited.get( cur ).random = visited.get( cur.random );
+            if ( cur.random != null ) {
+                if ( !visited.containsKey( cur.random) ){
+                    visited.get( cur ).random = new Node( cur.random.val, null , null );
+                    visited.put( cur.random , visited.get( cur ).random );
+                    queue.offer( cur.random);
+                } else {
+                    visited.get( cur ).random = visited.get( cur.random );
+                }
             }
         }
         return cloneHead;
     }
 
     public static void main(String[] args) {
-
+        Solution138CopyRandomList solution138CopyRandomList = new Solution138CopyRandomList();
+        Node node1 = new Node( 7 );
+        Node node2 = new Node( 13 );
+        Node node3 = new Node( 11 );
+        Node node4 = new Node( 10 );
+        Node node5 = new Node( 1 );
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
+        node5.next = null;
+        node1.random = null;
+        node2.random = node1;
+        node3.random = node5;
+        node4.random = node3;
+        node5.random = node1;
+        solution138CopyRandomList.copyRandomBFSList(node1);
     }
 
 }

@@ -26,6 +26,11 @@ public class Node {
     public Node random;
     public Node() {}
     //随机指针
+    public Node(int val ) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
     public Node(int val , Node _next , Node _random ) {
         this.val = val;
         this.next = _next;
