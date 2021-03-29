@@ -20,29 +20,53 @@ package Solutioin.LinkedList;
  */
 public class Solution61RotateRight {
 
-    public ListNode rotateRight ( ListNode head , int k ) {
+//    public ListNode rotateRight ( ListNode head , int k ) {
+//        if ( head == null ) {
+//            return head;
+//        }
+//        int n = 0;
+//        ListNode cur = head;
+//        while ( cur.next != null ) {
+//            cur = cur.next;
+//            n++;
+//        }
+//        n++;
+//        cur.next = head;
+//        if ( k == n ) {
+//            return head;
+//        }
+//        k = k % n;
+//        k = n - k;
+//        while ( k != 1 ) {
+//            head = head.next;
+//            k--;
+//        }
+//        cur = head.next;
+//        head.next = null;
+//        return cur;
+//    }
+
+    public ListNode rotateRight(ListNode head, int k) {
         if ( head == null ) {
-            return head;
+            return null;
         }
+        ListNode dummy = new ListNode( 0 , head );
+        ListNode cur = dummy;
+        ListNode preTail = dummy;
         int n = 0;
-        ListNode cur = head;
         while ( cur.next != null ) {
             cur = cur.next;
             n++;
         }
-        n++;
         cur.next = head;
-        if ( k == n ) {
-            return head;
-        }
         k = k % n;
-        k = n - k;
-        while ( k != 1 ) {
-            head = head.next;
-            k--;
+        int rest = n - k;
+        while ( rest > 0 ) {
+            preTail = preTail.next;
+            rest--;
         }
-        cur = head.next;
-        head.next = null;
+        cur = preTail.next;
+        preTail.next = null;
         return cur;
     }
 
