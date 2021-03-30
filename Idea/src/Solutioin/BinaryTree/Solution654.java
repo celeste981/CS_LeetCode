@@ -24,19 +24,6 @@ import java.util.Arrays;
  */
 public class Solution654 {
 
-    public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
-
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return build(nums , 0 , nums.length - 1);
     }
