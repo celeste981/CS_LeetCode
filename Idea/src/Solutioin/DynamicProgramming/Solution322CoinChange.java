@@ -40,6 +40,6 @@ public class Solution322CoinChange {
 
     public static void main(String[] args) {
         Solution322CoinChange solution322CoinChange = new Solution322CoinChange();
-        System.out.println( solution322CoinChange.coinChange( new int[] { 1 , 2 , 5 } , 11));
+        System.out.println( solution322CoinChange.coinChange( new int[] { 1 , 2 , 5 } , 5));
     }
 }

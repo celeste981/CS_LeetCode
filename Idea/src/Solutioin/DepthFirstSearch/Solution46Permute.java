@@ -24,7 +24,7 @@ import java.util.List;
  * @create 2021/2/3
  * @since 1.0.0
  */
-public class Solution46 {
+public class Solution46Permute {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
         Deque<Integer> occ = new ArrayDeque<Integer>();
@@ -41,15 +41,19 @@ public class Solution46 {
             if(!used[i]){
                 occ.addLast(nums[i]);
                 used[i] = true;
+
+                System.out.println(" 回溯之前 => " + occ );
                 dfs(nums , used , occ , ans);
+
                 used[i] = false;
                 occ.removeLast();
+                System.out.println(" 回溯之后 => " + occ );
             }
         }
     }
 
     public static void main(String[] args) {
-        Solution46 solution46 = new Solution46();
-        System.out.println(solution46.permute(new int[]{1 , 2 , 3}));
+        Solution46Permute solution46 = new Solution46Permute();
+        System.out.println(solution46.permute(new int[]{1 , 2 , 3 , 4}));
     }
 }
