@@ -20,17 +20,26 @@ package Solutioin.BitOperation;
  */
 public class Solution191hammingWeight {
 
-    public int hammingWeight(int n) {
-        int ans = 0;
-        while ( n != 0 ) {
-            n &= (n - 1);
-            ans++;
-        }
-        return ans;
+//    public int hammingWeight(int n) {
+//        int ans = 0;
+//        while ( n != 0 ) {
+//            n &= (n - 1);
+//            ans++;
+//        }
+//        return ans;
+//    }
+
+    public int hammingWeight(int n)
+    {
+        n = (n & 0x55555555) + ((n >> 1) & 0x55555555);
+        n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
+        n = (n & 0x0F0F0F0F) + ((n >> 4) & 0x0F0F0F0F);
+        n = (n * (0x01010101) >> 24);
+        return n;
     }
 
     public static void main(String[] args) {
         Solution191hammingWeight solution191hammingWeight = new Solution191hammingWeight();
-
+        System.out.println(solution191hammingWeight.hammingWeight(5));
     }
 }

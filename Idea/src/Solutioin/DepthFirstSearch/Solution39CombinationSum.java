@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package Solutioin;
+package Solutioin.DepthFirstSearch;
 
 import java.util.*;
 
@@ -34,10 +34,10 @@ public class Solution39CombinationSum {
     }
 
     public void dfs (int[] candidates , int begin , int target , Deque<Integer> path , List<List<Integer>> ans ) {
-        //target为负数时退出
-        if ( target < 0 ) {
-            return ;
-        }
+//        //target为负数时退出
+//        if ( target < 0 ) {
+//            return ;
+//        }
         //target为0时输出
         if ( target == 0 ) {
             ans.add( new ArrayList<>( path ) );
@@ -49,12 +49,12 @@ public class Solution39CombinationSum {
                 break;
             }
             path.addLast( candidates[i] );
-            System.out.println(" 递归之前 => " + path + " , 剩余 = " + (target - candidates[i]) );
+            System.out.println(" 回溯之前 => " + path + " , 剩余 = " + (target - candidates[i]) );
 
             dfs( candidates , i , target - candidates[i] , path , ans );
             path.removeLast();
 
-            System.out.println( " 递归之后 => " + path );
+            System.out.println( " 回溯之后 => " + path );
         }
     }
 

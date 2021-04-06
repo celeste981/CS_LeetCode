@@ -21,7 +21,7 @@ import java.util.List;
  * @create 2021/3/15
  * @since 1.0.0
  */
-public class Solution45Daily {
+public class Solution45SpiralOrder {
 
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> ans = new LinkedList<>();
@@ -49,7 +49,7 @@ public class Solution45Daily {
     }
 
     public static void main(String[] args) {
-        Solution45Daily solution45Daily = new Solution45Daily();
+        Solution45SpiralOrder solution45Daily = new Solution45SpiralOrder();
         System.out.println(solution45Daily.spiralOrder(new int[][] { {1,2,3} , {4,5,6} , {7,8,9}}));
     }
 }

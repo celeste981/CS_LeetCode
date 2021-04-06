@@ -18,7 +18,7 @@ package Solutioin.LinkedList;
  * @create 2021/3/16
  * @since 1.0.0
  */
-public class MergeTwoLists {
+public class Solution21MergeTwoLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if ( l1 == null || l2 == null ) {
@@ -41,6 +41,6 @@ public class MergeTwoLists {
     }
 
     public static void main(String[] args) {
-        MergeTwoLists mergeTwoLists = new MergeTwoLists();
+        Solution21MergeTwoLists mergeTwoLists = new Solution21MergeTwoLists();
     }
 }
