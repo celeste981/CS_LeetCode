@@ -18,7 +18,7 @@ package Solutioin.BinarySearch;
  * @create 2021/3/6
  * @since 1.0.0
  */
-public class Solution875 {
+public class Solution875MinEatingSpeed {
 
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1 , right = 1;
@@ -47,7 +47,7 @@ public class Solution875 {
     }
 
     public static void main(String[] args) {
-        Solution875 solution875 = new Solution875();
+        Solution875MinEatingSpeed solution875 = new Solution875MinEatingSpeed();
         System.out.println(solution875.minEatingSpeed(new int[]{3,6,7,11} , 8));
     }
 }

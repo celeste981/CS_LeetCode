@@ -10,7 +10,6 @@
  */
 package Solutioin;
 
-import Solutioin.SlidingWindow.Solution1423;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -22,7 +21,7 @@ import Solutioin.SlidingWindow.Solution1423;
  * @create 2021/2/7
  * @since 1.0.0
  */
-public class Solution665 {
+public class Solution665CheckPossibility {
     public boolean checkPossibility(int[] nums) {
         boolean ans = true;
         int n = nums.length, count = 0;
@@ -41,7 +40,7 @@ public class Solution665 {
         return ans;
     }
     public static void main(String[] args) {
-        Solution665 solution665 = new Solution665();
+        Solution665CheckPossibility solution665 = new Solution665CheckPossibility();
         System.out.println(solution665.checkPossibility(new int[]{3 , 5 , 3}));
     }
 }

@@ -18,7 +18,7 @@ package Solutioin.BinarySearch;
  * @create 2021/3/5
  * @since 1.0.0
  */
-public class Solution153 {
+public class Solution153FindMin {
 
 //    public int findMin(int[] nums) {
 //        int ans = nums[0];
@@ -44,7 +44,7 @@ public class Solution153 {
     }
 
     public static void main(String[] args) {
-        Solution153 solution153 = new Solution153();
+        Solution153FindMin solution153 = new Solution153FindMin();
         System.out.println(solution153.findMin(new int[] { 3,4,5,1,2}));
     }
 }

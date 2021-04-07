@@ -19,7 +19,7 @@ package Solutioin.BinarySearch;
  * @create 2021/2/28
  * @since 1.0.0
  */
-public class Solution410 {
+public class Solution410SplitArray {
 
     public int splitArray(int[] nums, int m) {
         int left = 0 , right = 0;
@@ -57,7 +57,7 @@ public class Solution410 {
     }
 
     public static void main(String[] args) {
-        Solution410 solution410 = new Solution410();
+        Solution410SplitArray solution410 = new Solution410SplitArray();
         System.out.println(solution410.splitArray(new int[]{1,7,2,8,5} , 3));
     }
 }
