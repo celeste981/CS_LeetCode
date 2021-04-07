@@ -10,8 +10,6 @@
  */
 package Solutioin.BinarySearch;
 
-import Solutioin.BinaryTree.Solution116;
-
 /**
  * 〈一句话功能简述〉<br> 
  * 〈搜索旋转排序数组〉
@@ -20,7 +18,7 @@ import Solutioin.BinaryTree.Solution116;
  * @create 2021/3/5
  * @since 1.0.0
  */
-public class Solution33 {
+public class Solution33Search {
 
     public int search(int[] nums, int target) {
         int left = 0 , right = nums.length - 1;
@@ -49,8 +47,34 @@ public class Solution33 {
         return -1;
     }
 
+//    public int search(int[] nums, int target) {
+//        int left = 0 , right = nums.length - 1;
+//        while ( left <= right ) {
+//            int mid = left + ( right - left ) / 2;
+//            if ( nums[mid] == target ) {
+//                return mid;
+//            }
+//            if ( nums[mid] < nums[right]) {
+//                //右边有序
+//                if ( nums[mid] <= target && target <= nums[right] ) {
+//                    left = mid + 1;
+//                } else {
+//                    right = mid - 1;
+//                }
+//            } else {
+//                //左边有序
+//                if ( nums[left] <= target && target <= nums[mid] ) {
+//                    right = mid - 1;
+//                } else {
+//                    left = mid + 1;
+//                }
+//            }
+//        }
+//        return -1;
+//    }
+
     public static void main(String[] args) {
-        Solution33 solution33 = new Solution33();
+        Solution33Search solution33 = new Solution33Search();
         System.out.println(solution33.search(new int[] {1,1,2,2,2,2,2,1} , 1));
     }
 }
