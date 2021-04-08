@@ -20,26 +20,40 @@ package Solutioin.BinarySearch;
  */
 public class Solution154FindMin {
 
+//    public int findMin(int[] nums) {
+//        int left = 0 , right = nums.length - 1;
+//        while (left < right ) {
+//            int mid = left + (right - left) / 2;
+//            if (nums[mid] == nums[right]){
+//                right--;
+//                continue;
+//            }
+//            if (nums[mid] > nums[right]) {
+//                left = mid + 1;
+//            } else {
+//                right = mid;
+//            }
+//        }
+//        return nums[left];
+//    }
 
-    public int findMin(int[] nums) {
+    public int findMinDaily ( int[] nums ) {
         int left = 0 , right = nums.length - 1;
-        while (left < right ) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] == nums[right]){
+        while ( left < right ) {
+            int mid = left + ( right - left ) / 2;
+            if ( nums[mid] == nums[right] ) {
                 right--;
-                continue;
-            }
-            if (nums[mid] > nums[right]) {
+            } else if ( nums[mid] > nums[right] ) {
                 left = mid + 1;
             } else {
                 right = mid;
             }
         }
-        return nums[left];
+        return nums[right];
     }
 
     public static void main(String[] args) {
         Solution154FindMin solution154 = new Solution154FindMin();
-        System.out.println(solution154.findMin(new int[] {1,3,3}));
+        System.out.println(solution154.findMinDaily(new int[] {1,3,3}));
     }
 }
