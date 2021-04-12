@@ -25,6 +25,7 @@ public class Solution22GenerateParenthesis {
     public List<String> generateParenthesis ( int n ) {
         List<String> ans = new ArrayList<>();
 //        String path = "";
+//        StringBuilder path = new StringBuilder();
         dfs( ans , "" , n , n );
         return ans;
     }
