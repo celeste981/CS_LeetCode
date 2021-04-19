@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package Solutioin;
+package Solutioin.DepthFirstSearch.Recursion;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -19,9 +19,9 @@ package Solutioin;
  * @since 1.0.0
  */
 public class TreeNode {
-    public int val;
-    public TreeNode left;
-    public TreeNode right;
+    int val;
+    TreeNode left;
+    TreeNode right;
 
     TreeNode() {
     }
