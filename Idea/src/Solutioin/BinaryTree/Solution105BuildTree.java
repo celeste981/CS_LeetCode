@@ -18,7 +18,7 @@ package Solutioin.BinaryTree;
  * @create 2021/3/8
  * @since 1.0.0
  */
-public class Solution105 {
+public class Solution105BuildTree {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return buildRoot(preorder , 0 , preorder.length - 1 , inorder , 0 , inorder.length - 1 );
@@ -43,6 +43,6 @@ public class Solution105 {
         return root;
     }
     public static void main(String[] args) {
-        Solution105 solution105 = new Solution105();
+        Solution105BuildTree solution105 = new Solution105BuildTree();
     }
 }
