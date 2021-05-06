@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package JavaEE.DataType;
+package JavaBasics.DataType;
 
 /**
  * 〈一句话功能简述〉<br> 
