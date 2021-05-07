@@ -59,12 +59,14 @@ public class Offer51ReversePairs {
             tmpArr[idx++] = nums[temp2++];
         }
         // 把新数组中的数覆盖nums数组
-        for (int k = 0; k < tmpArr.length - 1; k++) {
+        for (int k = 0; k < tmpArr.length; k++) {
             nums[k + left] = tmpArr[k];
         }
     }
 
     public static void main(String[] args) {
-
+        Offer51ReversePairs offer51ReversePairs = new Offer51ReversePairs();
+        int[] nums = new int[]{7,5,6,4};
+        System.out.println(offer51ReversePairs.reversePairs(nums));
     }
 }
