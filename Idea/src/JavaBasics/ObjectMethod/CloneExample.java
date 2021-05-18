@@ -25,5 +25,6 @@ public class CloneExample {
 
     public static void main(String[] args) {
         CloneExample e1 = new CloneExample();
+//        CloneExample e2 = e1.clone();
     }
 }

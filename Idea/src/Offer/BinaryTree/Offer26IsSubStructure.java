@@ -20,20 +20,39 @@ package Offer.BinaryTree;
  */
 public class Offer26IsSubStructure {
 
+//    public boolean isSubStructure (TreeNode A , TreeNode B) {
+//        if (A == null || B == null) {
+//            return false;
+//        }
+//        return isSame(A , B) || isSubStructure(A.left , B) || isSubStructure( A.right , B);
+//    }
+//
+//    public boolean isSame (TreeNode a , TreeNode b) {
+//        if (b == null) {
+//            return true;
+//        } else if (a == null) {
+//            return false;
+//        } else {
+//            return a.val == b.val && isSame(a.left , b.left) && isSame(a.right , b.right);
+//        }
+//    }
+
     public boolean isSubStructure (TreeNode A , TreeNode B) {
         if (A == null || B == null) {
             return false;
         }
-        return isSame(A , B) || isSubStructure(A.left , B) || isSubStructure( A.right , B);
+        return isSimilar(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
     }
 
-    public boolean isSame (TreeNode a , TreeNode b) {
-        if (b == null) {
+    public boolean isSimilar(TreeNode x, TreeNode y) {
+        if (y == null) {
+            // B树搜索完成，未发现不一致，return true
             return true;
-        } else if (a == null) {
+        } else if (x == null) {
+            // B树未搜索完成，此时A树已经为空了，return false
             return false;
         } else {
-            return a.val == b.val && isSame(a.left , b.left) && isSame(a.right , b.right);
+            return x.val == y.val && isSimilar(x.left, y.left) && isSimilar(x.right, y.right);
         }
     }
 
